@@ -1,0 +1,1 @@
+[{"Name":"Dota 2","Price":199.0,"Hours":0.0,"ImgPath":"C:\\Users\\Мария\\source\\repos\\Steam.v2\\Steam.v2\\gameImges\\DOTA.jpg","ExePath":"C:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\bin\\win64\\dota2.exe"}]
