@@ -39,7 +39,7 @@ namespace Steam.v2
             {
                 SteamClient.CurrentAccount.DeleteGame(SteamClient.CurrentAccount.games.Where(x => x.Name == gameBox.Name).FirstOrDefault());
                 Refresh();
-                SteamClient.dataStorage.Save(SteamClient.CurrentAccount.games);
+                SteamClient.dataStorage.Save(SteamClient.accountManager._accounts);
             }
             
         }

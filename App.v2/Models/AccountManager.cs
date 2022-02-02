@@ -19,68 +19,17 @@ namespace App.Models
         }
         public bool CheckLogin(string login)
         {
-            List<Account> accounts = _accounts.Where(x => x.Login == login).ToList();
-            if (accounts.Count > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return _accounts.Where(x => x.Login == login).FirstOrDefault() != null;
         }
         public bool CheckAccount(string login, string password)
         {
-            List<Account> accounts = _accounts.Where(x => x.Login == login && x.Password == password).ToList();
-            if (accounts.Count > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return _accounts.Where(x => x.Login == login && x.Password == password).FirstOrDefault() != null;
         }
 
-        public bool ReplaceLogin(string lLogin, object login)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Account AutoResation(string login, string password)
+        public Account Autorization(string login, string password)
         {
             Account currentAccount = _accounts.FirstOrDefault(x => x.Login == login && x.Password == password);//cdec
             return currentAccount;
-        }
-
-        public bool ReplacePassword(string password, string pPasword)
-        {
-            if (pPasword != password)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        public Account Login(string login ,string password)
-        {
-            Account account = _accounts.FirstOrDefault(x => x.Login == login && x.Password == password);
-            return account;
-        }
-
-        public void ChangeLogin(string login, string newLogin)
-        {
-            _accounts.FirstOrDefault(x => x.Login == login).Login = newLogin;
-        }
-        public void ChangePassword(string password, string newPassword)
-        {
-            _accounts.FirstOrDefault(x => x.Password == password).Password = newPassword;
-        }
-        public void ChangeNickName(string nickName, string newNickName)
-        {
-            _accounts.FirstOrDefault(x => x.NickName == nickName).NickName = newNickName;
         }
     }
 }

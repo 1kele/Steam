@@ -26,7 +26,7 @@ namespace Steam.v2
             string password = passwordTB.Text;
             if (SteamClient.accountManager.CheckAccount(login, password))
             {
-                SteamClient.CurrentAccount = SteamClient.accountManager.AutoResation(login, password);
+                SteamClient.CurrentAccount = SteamClient.accountManager.Autorization(login, password);
                 MessageBox.Show("Вы вошли в свой Аккаунт");
                 mainMenu.Show();
                 this.Hide();

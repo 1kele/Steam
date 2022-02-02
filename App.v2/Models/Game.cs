@@ -9,7 +9,6 @@ namespace App.Models
         private string Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
-        public double Hours { get; set; }
         public string ImgPath { get; set; }
         public string ExePath { get; set; }
 
@@ -18,7 +17,6 @@ namespace App.Models
             Id = Guid.NewGuid().ToString();
             Name = name;
             Price = price;
-            Hours = 0;
             ImgPath = imgPath;
             ExePath = exePath;
         }

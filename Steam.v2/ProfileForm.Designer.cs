@@ -63,7 +63,6 @@ namespace Steam.v2
             this.getInfoLable.TabIndex = 1;
             this.getInfoLable.Text = "Информация ";
             this.getInfoLable.UseCompatibleTextRendering = true;
-            this.getInfoLable.Click += new System.EventHandler(this.getInfoLable_Click);
             // 
             // replaceBtn
             // 
@@ -265,7 +264,6 @@ namespace Steam.v2
             this.balanceLable.Size = new System.Drawing.Size(16, 17);
             this.balanceLable.TabIndex = 14;
             this.balanceLable.Text = "0";
-            this.balanceLable.Click += new System.EventHandler(this.balanceLable_Click);
             // 
             // addBalanceTB
             // 

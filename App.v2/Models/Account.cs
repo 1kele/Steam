@@ -10,6 +10,7 @@ namespace App.Models
         public string Login { get; set; }
         public string Password { get; set; }
         public string NickName { get; set; }
+        public string AvatarPath { get; set; }
 
         public Wallet wallet = new Wallet();
 
@@ -49,6 +50,19 @@ namespace App.Models
             {
                 return;
             }
+        }
+
+        public void ChangeLogin(string newLogin)
+        {
+            Login = newLogin;
+        }
+        public void ChangePassword(string newPassword)
+        {
+            Password = newPassword;
+        }
+        public void ChangeNickName(string newNickName)
+        {
+            NickName = newNickName;
         }
     }
 }

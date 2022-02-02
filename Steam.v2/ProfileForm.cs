@@ -40,9 +40,9 @@ namespace Steam.v2
             }
             else 
             {
-                SteamClient.ChangeNickName(nickNameTB.Text);
-                SteamClient.ChangeLogin(loginTB.Text);
-                SteamClient.ChangePassword(passwordTB.Text);
+                SteamClient.CurrentAccount.ChangeNickName(nickNameTB.Text);
+                SteamClient.CurrentAccount.ChangeLogin(loginTB.Text);
+                SteamClient.CurrentAccount.ChangePassword(passwordTB.Text);
                 getInfoLable.Text = SteamClient.CurrentAccount.NickName;
                 replaceBtn.Text = "Редактировать";
                 nickNameTB.ReadOnly = true;
@@ -59,6 +59,7 @@ namespace Steam.v2
             passwordTB.Text = SteamClient.CurrentAccount.Password;
             getInfoLable.Text = SteamClient.CurrentAccount.NickName;
             balanceLable.Text = SteamClient.CurrentAccount.wallet.Balance.ToString();
+            avatarImageBX.Image = new Bitmap(SteamClient.CurrentAccount.AvatarPath);
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -77,21 +78,14 @@ namespace Steam.v2
                 try
                 {
                     avatarImageBX.Image = new Bitmap(open.FileName);
+                    SteamClient.CurrentAccount.AvatarPath = open.FileName;
+                    SteamClient.dataStorage.Save(SteamClient.accountManager._accounts);
                 }
                 catch
                 {
                     MessageBox.Show("Невозможно открыть выбранный файл", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void balanceLable_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void getInfoLable_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void topUpBtn_Click(object sender, EventArgs e)

@@ -20,10 +20,5 @@ namespace App.Models
                 balance = value;
             }
         }
-
-        public bool Check(decimal price)
-        {
-            return price <= Balance;
-        }
     }
 }

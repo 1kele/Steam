@@ -13,7 +13,7 @@ namespace App.Models
         {
             SteamClient.dataStorage.Load(out allGames);
         }
-        public static Game FindGameByNam(string gameName)
+        public static Game FindGameByName(string gameName)
         {
             Game game = allGames.FirstOrDefault(x => x.Name == gameName);
             return game;
